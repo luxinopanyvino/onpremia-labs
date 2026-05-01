@@ -1,0 +1,106 @@
+{
+  "benchmarks": [
+    {
+      "benchmark_id": "obs_2026_001",
+      "timestamp": "2026-04-16T12:00:00Z",
+      "config": {
+        "name": "MiniPC Ryzen 7 7840HS",
+        "type": "minipc",
+        "hardware": {
+          "cpu": { "model": "Ryzen 7 7840HS", "cores": 8, "threads": 16 },
+          "gpu": { "model": "Integrated Radeon 780M", "vram": "shared" },
+          "ram": { "size_gb": 32, "type": "DDR5", "speed_mhz": 5600 },
+          "storage": { "type": "NVMe", "size_gb": 1000 }
+        },
+        "system": { "os": "Ubuntu 22.04", "driver": "ROCm / CUDA / N/A" }
+      },
+      "inference": {
+        "backend": "ollama",
+        "model": { "name": "mistral-7b", "quantization": "Q4_K_M", "context_size": 4096 }
+      },
+      "performance": {
+        "tokens_per_sec": 18.5,
+        "ttft_sec": 1.8,
+        "latency_avg_sec": 0.12,
+        "ram_usage_mb": 18000,
+        "vram_usage_mb": 0,
+        "cpu_usage_percent": 75,
+        "gpu_usage_percent": 40
+      },
+      "capability": {
+        "coding": { "swe_pass_rate": 0.42, "avg_time_sec": 12.5 },
+        "reasoning": { "accuracy": 0.65 },
+        "instruction_following": { "score": 0.8 }
+      },
+      "behavior": {
+        "toxicity": { "score": 0.1, "refusal_rate": 0.9 },
+        "safety": { "compliance": 0.85 },
+        "bias": { "score": 0.2 }
+      },
+      "usability": {
+        "agent_task_success": 0.7,
+        "workflow_completion": 0.75,
+        "stability_score": 0.9
+      },
+      "cost": { "hardware_eur": 800, "power_watts_avg": 65, "cost_per_1M_tokens_eur": 0.15 },
+      "scores": {
+        "performance_score": 6.2,
+        "capability_score": 6.5,
+        "behavior_score": 7.1,
+        "usability_score": 7.5,
+        "overall_score": null
+      }
+    },
+    {
+      "benchmark_id": "obs_2026_002",
+      "timestamp": "2026-04-16T13:15:00Z",
+      "config": {
+        "name": "RTX 4090 + Ryzen 9 7950X",
+        "type": "desktop",
+        "hardware": {
+          "cpu": { "model": "Ryzen 9 7950X", "cores": 16, "threads": 32 },
+          "gpu": { "model": "RTX 4090", "vram": "24GB" },
+          "ram": { "size_gb": 64, "type": "DDR5", "speed_mhz": 6000 },
+          "storage": { "type": "NVMe", "size_gb": 2000 }
+        },
+        "system": { "os": "Ubuntu 22.04", "driver": "CUDA" }
+      },
+      "inference": {
+        "backend": "ollama",
+        "model": { "name": "mistral-7b", "quantization": "Q4_K_M", "context_size": 4096 }
+      },
+      "performance": {
+        "tokens_per_sec": 62.3,
+        "ttft_sec": 0.8,
+        "latency_avg_sec": 0.06,
+        "ram_usage_mb": 24000,
+        "vram_usage_mb": 16000,
+        "cpu_usage_percent": 55,
+        "gpu_usage_percent": 70
+      },
+      "capability": {
+        "coding": { "swe_pass_rate": 0.55, "avg_time_sec": 9.2 },
+        "reasoning": { "accuracy": 0.7 },
+        "instruction_following": { "score": 0.88 }
+      },
+      "behavior": {
+        "toxicity": { "score": 0.08, "refusal_rate": 0.85 },
+        "safety": { "compliance": 0.9 },
+        "bias": { "score": 0.12 }
+      },
+      "usability": {
+        "agent_task_success": 0.78,
+        "workflow_completion": 0.8,
+        "stability_score": 0.95
+      },
+      "cost": { "hardware_eur": 2500, "power_watts_avg": 310, "cost_per_1M_tokens_eur": 0.3 },
+      "scores": {
+        "performance_score": 9.5,
+        "capability_score": 8.2,
+        "behavior_score": 8.0,
+        "usability_score": 8.5,
+        "overall_score": null
+      }
+    }
+  ]
+}
